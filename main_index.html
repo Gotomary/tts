@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Text to speech example</title>
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/font-awesome.css">  
+</head>
+
+<body>
+
+    <nav style="background-color:#26a69a">
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#" class="brand-logo offset-s3" style="font-family:'Monotype Corsiva';">
+            <button class="btn-floating btn-large waves-effect waves-light white" id="pause" style="margin-left:10px">
+            <i id="replay" class="fa fa-microphone" style="color:#e25050"></i>
+            </button>
+            
+          <!--i class="fa fa-microphone" style="color:#e25050;background-color:#fff;margin-left:1em;border-radius:50%;padding-left:0.8em;padding-right:0.8em">
+            </i-->
+             Text-to-speech
+             </a>
+        </div>
+      </div>
+    </nav>
+
+<div class="container" style="width:auto">
+  <div class="row" style="margin-left:0px;margin-right:0px">
+    <!--div class="col s5 offset-s4" style="margin-top:1em;">
+      <h1>
+       <div class="btn-floating btn-large waves-effect waves-light red" style="background-color:#e25050"> <i class="fa fa-microphone"></i></div>
+      </h1>
+    </div-->
+  <!-- Form 1-->
+<section>
+  <form class="col s6" style="margin-top:1em;">
+    <div class="card ">
+      <div class="card-image" style="margin-bottom:0px"> 
+        <img src="images/banner2.jpg">                 
+        </div>
+      <div class="card-content">
+        <div class="row" style="margin-bottom:0px">
+            <label><i id="replay" class="fa fa-male"></i><i id="replay" class="fa fa-female"></i><i id="replay" class="fa fa-headphones"></i> Choose voice</label>
+            <select id="voices"></select>
+        </div>
+        <div class="row" style="margin-bottom:0px">
+          <div class="input-field col s12">
+              <textarea id="message" class="materialize-textarea"></textarea>
+              <label><i id="replay" class="fa fa-edit"></i> Write message</label>
+          </div>
+        </div>
+          <a href="#" id="speak" class="waves-effect waves-light btn"><i class="fa fa-microphone"></i> Speak</a>
+      </div>
+    </div>
+  </form>  
+
+  <!-- Form 2 -->
+ <form class="col s6" style="background-image:url('images/backgrounds.jpg');background-repeat:repeat-y;margin-top:1em;">
+    <div class="card">
+               <div class="card-image" style="margin-bottom:0px"> 
+                 <img src="images/banner.jpg">                 
+          <h4 align="center" style="position:relative;top:-45px">
+          <button class="btn-floating btn-large waves-effect waves-light btn" id="resume" onclick="speechSynthesis.resume()">
+          <i id="replay" class="fa fa-play"></i>
+          </button>
+          <button class="btn-floating btn-large waves-effect waves-light blue" id="pause" onclick="speechSynthesis.pause()">
+          <i id="replay" class="fa fa-pause"></i>
+          </button>
+          <button class="btn-floating btn-large waves-effect waves-light btn red" id="cancel" onclick="speechSynthesis.cancel()">
+          <i id="replay" class="fa fa-stop"></i>
+          </button>
+          </h4>
+               </div>         
+      <div class="card-content" style="margin-top:-50px">
+        <div class="row">
+          <div style="" class="col s2">
+            <h4>
+              <i id="replay" class="fa fa-volume-up" title="Volume Level"></i>
+            </h4>
+          </div>
+          <div style="" class="col s10">
+            <p class="range-field" style="margin-top:0.5em;">
+              <input type="range" id="volume" min="0" max="10" value="5" />
+            </p>
+          </div>
+          </div>
+
+        <div class="row">
+          <div class="col s1">
+            <h4>
+              <i id="replay" class="fa fa-fast-forward" title="Rate (Regulate how fast your output should be)"></i>
+            </h4>
+          </div>
+          <div style="" class="col s4 offset-s1">
+            <p class="range-field" style="margin-top:0.5em;">
+              <input type="range" id="rate" min="1" max="100" value="10" />
+            </p>
+          </div>
+          <div class="col s1">
+          </div>
+          <div class="col s1">
+            <h4>
+              <i id="replay" class="fa fa-level-up" title="Rate (Regulate how fast your output should be)"></i>
+            </h4>
+          </div>
+          <div style="" class="col s4">
+            <p class="range-field" style="margin-top:0.5em;">
+              <input type="range" id="pitch" min="0" max="2" value="1" />
+            </p>
+          </div>
+          <div class="col s12" style="margin-top:1em">
+            <p><b>N.B. Rate and Pitch only work with native voice.</b></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>  
+
+</div>
+</div>
+
+<div id="modal1" class="modal">
+  <h4>Speech Synthesis not supported</h4>
+  <p>Your browser does not support speech synthesis.</p>
+  <p>We recommend you use Google Chrome.</p>
+  <div class="action-bar">
+    <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Close</a>
+  </div>
+</div>
+
+<script src="jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+  
+  
+
+    <script src="js/index.js"></script>
+
+
+
+
+</body>
+<footer style="margin-top:2em;">
+  <hr/>
+ <p align="center"> &copy; 2018 - <b>Speech Output System for the Disabled (Final Year Project) by Akinyemi Taiwo</b></p>
+</footer>
+</html>
